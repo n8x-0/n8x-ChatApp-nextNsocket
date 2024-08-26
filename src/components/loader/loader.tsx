@@ -1,0 +1,15 @@
+import React from 'react';
+
+interface LoaderProps {
+  style: string;
+}
+
+const Loader = ({ style }: LoaderProps) => {
+  return (
+    <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
+      <div className={style}></div>
+    </div>
+  );
+};
+
+export default Loader;

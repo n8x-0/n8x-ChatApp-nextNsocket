@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  color: white
+}
+
+@font-face {
+  font-family: sauda;
+  src: url("/public/Saudagar.ttf");
+}
+
+.glassMorph {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.6px);
+  -webkit-backdrop-filter: blur(6.6px);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+}
+
+.loop>div {
+  animation: move 20s linear infinite
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@font-face {
+  font-family: sauda;
+  src: url(../../public/Saudagar.ttf);
+}
+
+.animOp {
+  animation: fadeOut 1.1s ease-in;
+}
+
+@keyframes fadeOut {
+  35% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
