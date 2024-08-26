@@ -4,7 +4,6 @@ import { Socket } from "socket.io-client";
 import { useState, useEffect, useRef } from "react";
 import { Input } from "@/components/input/input";
 import EmptyMsgAlert from "../emptymsgalert/emptymsgalert";
-import { preloadImage } from "@/lib/imagepreloader";
 import Loader  from '@/components/loader/loader'
 
 type SocketProp = { socket: Socket, recieverId: string, chatId: string };
@@ -44,11 +43,6 @@ export function Chats({ socket, recieverId, chatId }: SocketProp) {
             const json = await res.json();
 
             if (res.ok) {
-                const preloadPromises = json.allChats.map((chat: messageIface) => preloadImage(chat.imageUrl));
-                await Promise.all(preloadPromises);
-
-                const preloadRecieverImag = preloadImage(json.userData.imageUrl)
-
                 setAllChats(json.allChats);
                 setRecieverData(json.userData)
             }
