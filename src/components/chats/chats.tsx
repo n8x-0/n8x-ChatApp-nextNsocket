@@ -1,7 +1,7 @@
 'use client'
 
 import { Socket } from "socket.io-client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Input } from "@/components/input/input";
 import EmptyMsgAlert from "../emptymsgalert/emptymsgalert";
 import { preloadImage } from "@/lib/imagepreloader";
@@ -20,6 +20,7 @@ export function Chats({ socket, recieverId, chatId }: SocketProp) {
     const [recieverData, setRecieverData] = useState<{ username: string, imageUrl: string } | null>(null);
     const [isEmptyMsg, setEmptyMsg] = useState(false);
     const [loading, setLoading] = useState(true);
+    const chatContainerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         async function fetchCurrentUser() {
@@ -65,6 +66,12 @@ export function Chats({ socket, recieverId, chatId }: SocketProp) {
             socket.off("rcv_msg", handleReceiveMessage);
         };
     }, [socket, chatId]);
+
+    useEffect(() => {
+        if (chatContainerRef.current) {
+            chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+        }
+    }, [allChats]);
 
     const handleSendMessage = async (message: string) => {
         if (!currUserId) return;
