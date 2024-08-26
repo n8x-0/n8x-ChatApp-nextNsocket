@@ -3,7 +3,7 @@
 import { Socket } from "socket.io-client";
 import { useState, useEffect } from "react";
 import { Input } from "@/components/input/input";
-import EmptyMsgAlert from "./emptymsgalert";
+import EmptyMsgAlert from "../emptymsgalert/emptymsgalert";
 import { preloadImage } from "@/lib/imagepreloader";
 import Loader  from '@/components/loader/loader'
 
