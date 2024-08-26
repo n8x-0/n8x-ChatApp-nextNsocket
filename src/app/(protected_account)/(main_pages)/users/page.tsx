@@ -78,7 +78,7 @@ const Users = () => {
     <div className='w-full flex justify-center items-center'>
       <ClientSideHeader>
         <div>
-          <input type="text" placeholder="Search" onChange={(e) => setSearchUser(e.target.value)} className="md:w-96 md:mr-2 px-5 md:py-2 py-[6px] rounded-3xl bg-zinc-200 focus:outline-none" />
+          <input type="text" placeholder="Search" onChange={(e) => setSearchUser(e.target.value)} className="md:w-96 w-[60%] md:mr-2 px-5 md:py-2 py-[6px] rounded-3xl bg-zinc-200 focus:outline-none" />
         </div>
         <Link href='/'><button className="bg-blue-500 py-2 px-4 rounded-3xl hover:scale-105 hover:transition-all duration-500" onClick={() => setLoading(true)}>Home</button></Link>
       </ClientSideHeader>
