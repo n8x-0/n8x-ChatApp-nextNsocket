@@ -119,7 +119,7 @@ export function Chats({ socket, recieverId, chatId }: SocketProp) {
                                 <img src={data.imageUrl} alt="" className="w-full h-full object-cover" />
                             </div> : <></>
                         }
-                        <span className={`px-5 py-3 mx-2 my-1 inline-block rounded-3xl tracking-tight max-w-96 leading-5 ${data.userId === currUserId ? 'bg-zinc-200 text-black' : 'bg-zinc-700'}`}>
+                        <span className={`px-5 py-3 mx-2 my-1 inline-block rounded-3xl tracking-tight sm:max-w-96 max-w-52 leading-5 ${data.userId === currUserId ? 'bg-zinc-200 text-black' : 'bg-zinc-700'}`}>
                             {data.message}
                         </span>
                         {data.userId === currUserId ?
