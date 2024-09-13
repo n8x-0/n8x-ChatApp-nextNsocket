@@ -1,3 +1,5 @@
+<h1><a href="https://n8x-chat-app.vercel.app/">Visit Chat app</a></h1>
+
 <h2>Overview</h2>
 
 This is a simple Next.js application that I've built with custom authentication. It features user registration and login, using JWT for authentication, bcrypt for password hashing, and cookies for managing sessions. The app is deployed on Vercel.
